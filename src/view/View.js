@@ -1,9 +1,13 @@
-var View = function() {
-  this.buttonSelector = '#submit-page1'
+var View = function () {
+    this.pageOneButton = '#submit-page1';
+    this.pageTwoButton = '#submit-page2';
 };
 
 View.prototype = {
-  getButton: function() {
-    return document.querySelector(this.buttonSelector)
-  }
+    getPageOneButton: function () {
+        return document.querySelector(this.pageOneButton)
+    },
+    getPageTwoButton: function () {
+        return document.querySelector(this.pageTwoButton)
+    }
 };
