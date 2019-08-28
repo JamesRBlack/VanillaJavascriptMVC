@@ -1,5 +1,5 @@
 var View = function() {
-  this.buttonSelector = 'button'
+  this.buttonSelector = '#submit-page1'
 };
 
 View.prototype = {
