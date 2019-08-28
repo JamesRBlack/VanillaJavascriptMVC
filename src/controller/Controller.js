@@ -2,6 +2,7 @@ window.onload = function () {
     let view = new View();
     let model = new Model();
     controller = new Controller(view, model);
+    controller.checkIfConfirmationPage();
 };
 
 
@@ -57,5 +58,25 @@ Controller.prototype = {
             alert("Post Code is invalid. Must be between 0800-7999")
         }
         return result
+    },
+
+    checkIfConfirmationPage() {
+        let path = window.location.pathname;
+        let page = path.split("/").pop();
+
+        if (page === 'form3.html') {
+            setConfirmationPageDetail();
+        }
+    },
+
+    setConfirmationPageDetail() {
+        document.getElementById("p1").innerHTML
+        document.getElementById("p1").innerHTML
+        document.getElementById("p1").innerHTML
+        document.getElementById("p1").innerHTML
+        document.getElementById("p1").innerHTML
+        document.getElementById("p1").innerHTML
+
     }
+
 };
