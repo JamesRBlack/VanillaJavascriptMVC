@@ -23,10 +23,28 @@ Controller.prototype = {
         this.model.setFirstName(document.getElementById("firstName").value);
         this.model.setLastName(document.getElementById("lastName").value);
         this.model.setEmail(document.getElementById("email").value);
-        this.model.setPhoneNumber(document.getElementById("phone").value)
+        this.model.setPhoneNumber(document.getElementById("phone").value);
+        if (this.validatePageOneForm()) {
+            // Navigate to page two
+        }
+    },
+
+    validatePageOneForm() {
+        return this.checkIsPopulated(this.model.getFirstName()) &&
+            this.checkIsPopulated(this.model.getLastName()) &&
+            this.checkIsPopulated(this.model.getEmail()) &&
+            this.checkIsPopulated(this.model.getPhoneNumber());
     },
 
     submitPageTwoForm() {
+    },
+
+    validatePageTwoForm() {
+
+    },
+
+    checkIsPopulated() {
+
     },
 
     checkPostCodeInBetween(str, min, max) {
