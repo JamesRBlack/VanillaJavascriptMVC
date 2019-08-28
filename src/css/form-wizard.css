@@ -3,5 +3,9 @@ body {
 }
 
 form {
-    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.progress {
+    margin-top: 10px;
 }
