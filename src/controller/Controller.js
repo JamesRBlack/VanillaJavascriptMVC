@@ -1,8 +1,7 @@
 window.onload = function () {
     let view = new View();
     let model = new Model();
-    let controller = new Controller(view, model);
-    controller.bindListeners();
+    controller = new Controller(view, model);
 };
 
 
@@ -12,10 +11,6 @@ var Controller = function (display, model) {
 };
 
 Controller.prototype = {
-    bindListeners: function () {
-        let pageTwoButton = this.display.getPageTwoButton();
-        pageTwoButton.addEventListener('click', this.submitPageTwoForm.bind(this));
-    },
 
     submitPageOneForm() {
         this.model.setFirstName(document.getElementById("firstName").value);
@@ -32,11 +27,11 @@ Controller.prototype = {
     },
 
     submitPageTwoForm() {
-        this.model.setStreetNumber(document.getElementById("lastName").value);
-        this.model.setStreetName(document.getElementById("firstName").value);
-        this.model.setStreetType(document.getElementById("email").value);
-        this.model.setSuburb(document.getElementById("phone").value);
-        this.model.setPostCode(document.getElementById("phone").value);
+        this.model.setStreetNumber(document.getElementById("streetNumber").value);
+        this.model.setStreetName(document.getElementById("streetName").value);
+        this.model.setStreetType(document.getElementById("streetType").value);
+        this.model.setSuburb(document.getElementById("suburb").value);
+        this.model.setPostCode(document.getElementById("postCode").value);
         return this.validatePageTwoForm();
     },
 
@@ -44,15 +39,18 @@ Controller.prototype = {
         return this.checkIsPopulated(this.model.getStreetName()) &&
             this.checkIsPopulated(this.model.getStreetNumber()) &&
             this.checkIsPopulated(this.model.getStreetType()) &&
-            this.checkIsPopulated(this.model.getSuburb());
+            this.checkIsPopulated(this.model.getSuburb()) &&
+            this.checkPostCodeInBetween(this.model.getPostCode())
     },
 
     checkIsPopulated(strValue) {
         return strValue && strValue.trim() !== "";
     },
 
-    checkPostCodeInBetween(str, min, max) {
+    checkPostCodeInBetween(str) {
+        let min = 800;
+        let max = 7999;
         let n = parseInt(str);
         return (!isNaN(n) && n >= min && n <= max);
     }
-}
+};
