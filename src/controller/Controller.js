@@ -22,9 +22,7 @@ Controller.prototype = {
         this.model.setLastName(document.getElementById("lastName").value);
         this.model.setEmail(document.getElementById("email").value);
         this.model.setPhoneNumber(document.getElementById("phone").value);
-        if (this.validatePageOneForm()) {
-            // Navigate to page two
-        }
+        return this.validatePageOneForm();
     },
 
     validatePageOneForm() {
@@ -34,10 +32,19 @@ Controller.prototype = {
     },
 
     submitPageTwoForm() {
+        this.model.setStreetNumber(document.getElementById("lastName").value);
+        this.model.setStreetName(document.getElementById("firstName").value);
+        this.model.setStreetType(document.getElementById("email").value);
+        this.model.setSuburb(document.getElementById("phone").value);
+        this.model.setPostCode(document.getElementById("phone").value);
+        return this.validatePageTwoForm();
     },
 
     validatePageTwoForm() {
-
+        return this.checkIsPopulated(this.model.getStreetName()) &&
+            this.checkIsPopulated(this.model.getStreetNumber()) &&
+            this.checkIsPopulated(this.model.getStreetType()) &&
+            this.checkIsPopulated(this.model.getSuburb());
     },
 
     checkIsPopulated(strValue) {
