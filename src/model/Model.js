@@ -2,73 +2,73 @@ let Model = function() {
 };
 
 Model.prototype.setFirstName = function(firstName) {
-    this.firstName = firstName;
+    sessionStorage.setItem('firstName', firstName);
 };
 
 Model.prototype.getFirstName = function() {
-    return this.firstName;
+    return sessionStorage.getItem('firstName');
 };
 
 Model.prototype.setLastName = function(lastName) {
-    this.lastName = lastName;
+    sessionStorage.setItem('lastName', lastName);
 };
 
 Model.prototype.getLastName = function() {
-    return this.lastName;
+    return sessionStorage.getItem('lastName');
 };
 
 Model.prototype.setEmail = function(email) {
-    this.email = email;
+    sessionStorage.setItem('email', email);
 };
 
 Model.prototype.getEmail = function() {
-    return this.email
+    return sessionStorage.getItem('email');
 };
 
 Model.prototype.setPhoneNumber = function(phoneNumber) {
-    this.phoneNumber = phoneNumber;
+    sessionStorage.setItem('phoneNumber', phoneNumber);
 };
 
 Model.prototype.getPhoneNumber = function() {
-    return this.phoneNumber;
+    return sessionStorage.getItem('phoneNumber');
 };
 
 Model.prototype.setStreetNumber = function(streetNumber) {
-    this.streetNumber = streetNumber;
+    sessionStorage.setItem('streetNumber', streetNumber);
 };
 
 Model.prototype.getStreetNumber = function() {
-    return this.streetNumber;
+    return sessionStorage.getItem('streetNumber');
 };
 
 Model.prototype.setStreetName = function(streetName) {
-    this.streetName = streetName;
+    sessionStorage.setItem('streetName', streetName);
 };
 
 Model.prototype.getStreetName = function() {
-    return this.streetName;
+    return sessionStorage.getItem('streetName');
 };
 
 Model.prototype.setStreetType = function(streetType) {
-    this.streetType = streetType;
+    sessionStorage.setItem('streetType', streetType);
 };
 
 Model.prototype.getStreetType = function() {
-    return this.streetType;
+    return sessionStorage.getItem('streetType');
 };
 
 Model.prototype.setSuburb = function(suburb) {
-    this.suburb = suburb;
+    sessionStorage.setItem('suburb', suburb);
 };
 
 Model.prototype.getSuburb = function() {
-    return this.suburb;
+    return sessionStorage.getItem('suburb');
 };
 
 Model.prototype.setPostCode = function(postCode) {
-    this.postCode = postCode;
+    sessionStorage.setItem('postCode', postCode);
 };
 
 Model.prototype.getPostCode = function() {
-    return this.postCode;
+    return sessionStorage.getItem('postCode');
 };
