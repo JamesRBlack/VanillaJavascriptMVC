@@ -14,11 +14,23 @@ var Controller = function (display, model) {
 Controller.prototype = {
     bindListeners: function () {
         let pageOneButton = this.display.getPageOneButton();
-        pageOneButton.addEventListener('click', this.method1.bind(this));
+        let pageTwoButton = this.display.getPageTwoButton();
+        pageOneButton.addEventListener('click', this.submitPageOneForm.bind(this));
+        pageTwoButton.addEventListener('click', this.submitPageTwoForm.bind(this));
     },
 
-    method1: function () {
-        this.model.setFirstName('hello')
-        this.model.setLastName('hello')
+    submitPageOneForm() {
+        this.model.setFirstName(document.getElementById("firstName").value);
+        this.model.setLastName(document.getElementById("lastName").value);
+        this.model.setEmail(document.getElementById("email").value);
+        this.model.setPhoneNumber(document.getElementById("phone").value)
+    },
+
+    submitPageTwoForm() {
+    },
+
+    checkPostCodeInBetween(str, min, max) {
+        let n = parseInt(str);
+        return (!isNaN(n) && n >= min && n <= max);
     }
-};
+}
