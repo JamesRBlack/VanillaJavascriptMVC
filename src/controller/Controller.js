@@ -24,7 +24,8 @@ Controller.prototype = {
     validatePageOneForm() {
         return this.checkIsPopulated(this.model.getFirstName()) &&
             this.checkIsPopulated(this.model.getLastName()) &&
-            this.checkIsPopulated(this.model.getEmail());
+            this.checkIsPopulated(this.model.getEmail()) &&
+            this.validateAustralianPhoneNumber(this.model.getPhoneNumber());
     },
 
     submitPageTwoForm() {
@@ -42,6 +43,17 @@ Controller.prototype = {
             this.checkIsPopulated(this.model.getStreetType()) &&
             this.checkIsPopulated(this.model.getSuburb()) &&
             this.checkPostCodeInBetween(this.model.getPostCode())
+    },
+
+    validateAustralianPhoneNumber(phoneNumber) {
+        let result = false;
+        let phonePattern = /^0[0-8]\d{8}$/g;
+        result = phonePattern.test(phoneNumber)
+
+        if (!result) {
+            alert("Please enter a correctly formatted AU number");
+        }
+        return result;
     },
 
     checkIsPopulated(strValue) {
