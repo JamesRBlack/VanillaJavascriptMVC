@@ -32,8 +32,7 @@ Controller.prototype = {
     validatePageOneForm() {
         return this.checkIsPopulated(this.model.getFirstName()) &&
             this.checkIsPopulated(this.model.getLastName()) &&
-            this.checkIsPopulated(this.model.getEmail()) &&
-            this.checkIsPopulated(this.model.getPhoneNumber());
+            this.checkIsPopulated(this.model.getEmail());
     },
 
     submitPageTwoForm() {
@@ -43,8 +42,8 @@ Controller.prototype = {
 
     },
 
-    checkIsPopulated() {
-
+    checkIsPopulated(strValue) {
+        return strValue && strValue.trim() !== "";
     },
 
     checkPostCodeInBetween(str, min, max) {
