@@ -13,9 +13,7 @@ var Controller = function (display, model) {
 
 Controller.prototype = {
     bindListeners: function () {
-        let pageOneButton = this.display.getPageOneButton();
         let pageTwoButton = this.display.getPageTwoButton();
-        pageOneButton.addEventListener('click', this.submitPageOneForm.bind(this));
         pageTwoButton.addEventListener('click', this.submitPageTwoForm.bind(this));
     },
 
