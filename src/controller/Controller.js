@@ -48,9 +48,14 @@ Controller.prototype = {
     },
 
     checkPostCodeInBetween(str) {
+        let result = false;
         let min = 800;
         let max = 7999;
         let n = parseInt(str);
-        return (!isNaN(n) && n >= min && n <= max);
+        result = !isNaN(n) && n >= min && n <= max;
+        if (!result) {
+            alert("Post Code is invalid. Must be between 0800-7999")
+        }
+        return result
     }
 };

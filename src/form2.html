@@ -67,10 +67,12 @@
             <div class="form-group">
                 <label for="suburb">Suburb</label>
                 <input type="text" class="form-control" id="suburb" aria-describedby="suburb" placeholder="Enter Suburb" required>
+                <div class="invalid-feedback">Suburb is required</div>
             </div>
             <div class="form-group">
                 <label for="postCode">Post Code</label>
-                <input type="number" class="form-control" id="postCode" aria-describedby="postCOde" placeholder="Enter Post Code" required>
+                <input type="number" class="form-control" id="postCode" aria-describedby="postCode" placeholder="Enter Post Code" required>
+                <div class="invalid-feedback">Post Code must be between 0800-7999</div>
             </div>
             <button type="submit" id="submit-page2" class="btn btn-primary">Next</button>
         </form>
