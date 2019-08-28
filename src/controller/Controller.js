@@ -65,18 +65,20 @@ Controller.prototype = {
         let page = path.split("/").pop();
 
         if (page === 'form3.html') {
-            setConfirmationPageDetail();
+            this.setConfirmationPageDetail();
         }
     },
 
     setConfirmationPageDetail() {
-        document.getElementById("p1").innerHTML
-        document.getElementById("p1").innerHTML
-        document.getElementById("p1").innerHTML
-        document.getElementById("p1").innerHTML
-        document.getElementById("p1").innerHTML
-        document.getElementById("p1").innerHTML
-
+        document.getElementById("firstName").value = this.model.getFirstName();
+        document.getElementById("lastName").value = this.model.getLastName();
+        document.getElementById("email").value = this.model.getEmail();
+        document.getElementById("phone").value = this.model.getPhoneNumber();
+        document.getElementById("streetNumber").value = this.model.getStreetNumber();
+        document.getElementById("streetName").value = this.model.getStreetName();
+        document.getElementById("streetType").value = this.model.getStreetType();
+        document.getElementById("suburb").value = this.model.getSuburb();
+        document.getElementById("postCode").value = this.model.getPostCode();
     }
 
 };
